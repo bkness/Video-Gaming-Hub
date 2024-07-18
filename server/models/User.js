@@ -43,7 +43,7 @@ const userSchema = new mongoose.Schema(
 		toJSON: {
 			virtuals: true,
 		},
-	},
+	}
 )
 
 // hash user password

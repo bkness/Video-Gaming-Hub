@@ -20,7 +20,7 @@ const postSchema = new mongoose.Schema(
 	},
 	{
 		timestamps: true,
-	},
+	}
 )
 // these are all optional and i'd like your guys' feedback on if we should include these or not
 // makes each post have a readable url
