@@ -44,7 +44,6 @@ const NewsPage = () => {
 	const filtered = articles.filter(isValidArticle)
 	return (
 		<div className="container">
-			<Navbar />
 			<h1 className="news-feed">News Feed</h1>
 			<ul className="news-list">
 				{filtered.length === 0 ? (
