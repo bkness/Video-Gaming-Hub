@@ -86,8 +86,8 @@ const resolvers = {
 		getAllNews: async () => {
 			try {
 				const url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${process.env.NEWS_API_KEY}`
-				const response = await axios.get(url)
-				// const response = await new Promise((res) => res(mockNews))
+				// const response = await axios.get(url)
+				const response = await new Promise((res) => res(mockNews))
 
 				if (response.status !== 200) throw 'Failed to get news'
 				const mapped = response.data.articles.map((result) => {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -23,7 +23,7 @@ const HomePage = () => {
 	const [searchGames, setSearchedGames] = useState('')
 	const [searchResults, setSearchResults] = useState([])
 	const { loading, data, refetch: refetchMe } = useQuery(QUERY_ME)
-	// console.log(data)
+	console.log('User data:', data)
 	const userData = data?.me || {}
 
 	const { loading: gamesLoading, error: gamesError } = useQuery(GET_ALL_GAMES, {
