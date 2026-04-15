@@ -24,7 +24,7 @@
 		"@emotion/styled": "^11.14.1",
 		"@fortawesome/fontawesome-svg-core": "^6.5.1",
 		"@fortawesome/free-brands-svg-icons": "^7.2.0",
-		"@fortawesome/react-fontawesome": "^0.2.0",
+		"@fortawesome/react-fontawesome": "^3.3.0",
 		"@mapbox/node-pre-gyp": "^2.0.3",
 		"@mui/material": "^9.0.0",
 		"bcrypt": "^6.0.0",
