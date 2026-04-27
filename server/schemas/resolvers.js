@@ -92,7 +92,7 @@ const resolvers = {
 				if (response.status !== 200) throw 'Failed to get news'
 				const mapped = response.data.articles.map((result) => {
 					return {
-						source: result.source?.name || 'Unknown Source',
+						source: result.source?.name || result.source || 'Unknown Source',
 						author: result.author || 'Unknown Author',
 						title: result.title || 'No Title',
 						description: result.description || 'No Description',
