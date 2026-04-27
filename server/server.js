@@ -7,6 +7,7 @@ const { authMiddleware } = require('./utils/auth')
 const { typeDefs, resolvers } = require('./schemas')
 const db = require('./config/connection')
 const cors = require('cors')
+const { rateLimit } = require('express-rate-limit')
 const app = express()
 const PORT = process.env.PORT || 3001
 const server = new ApolloServer({
@@ -14,12 +15,25 @@ const server = new ApolloServer({
 	resolvers,
 })
 
+const limiter = rateLimit({
+	windowMs: 15 * 60 * 1000,
+	max: 100,
+	standardHeaders: true,
+	legacyHeaders: false,
+})
+
+const logger = (req, res, next) => {
+	console.log(`${req.method} request to ${req.url}`)
+	next()
+}
+
 const startApolloServer = async () => {
 	await server.start()
 
 	app.use(express.urlencoded({ extended: true }))
 	app.use(express.json())
 	app.use(cors())
+	app.use(limiter)
 	app.use(logger)
 	app.use(
 		'/graphql',
@@ -46,8 +60,3 @@ const startApolloServer = async () => {
 }
 
 startApolloServer()
-
-const logger = (req, res, next) => {
-	console.log(`${req.method} request to ${req.url}`)
-	next()
-}
