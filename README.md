@@ -1,76 +1,56 @@
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-
 # Video Game Hub
 
-Welcome to Video Game Hub, the premier destination for gamers seeking a personalized and immersive gaming experience. Our platform goes beyond mere gameplay; it fosters a vibrant community where players can curate their gaming journey like never before.
+Welcome to Video Game Hub — a community platform for gamers to discover games, track what they're playing, build wishlists, and connect through forums and news.
 
-### Features
+## Features
 
-Video Game Hub offers tailored features for the modern gamer:
+- Game search powered by the RAWG API with a carousel of top titles
+- Forum with threads and comments
+- Gaming news feed
+- Wishlist and currently-playing tracker (auth required)
+- JWT-based authentication
 
-- Showcase recently played games
-- Craft wishlists
-- Share latest pickups with fellow enthusiasts
+## Tech Stack
 
-But that's just the beginning. Our forum serves as a bustling hub for discussions on all aspects of gaming, connecting players, friends, and creators.
-
-### Customization
-
-What sets Video Game Hub apart is its dedication to customization. Whether you're forming new connections, following relevant players, or discovering like-minded friends, our platform empowers users to shape their gaming world according to their unique preferences and interests.
-
-### Join Us
-
-Join us at Video Game Hub and unlock a world of limitless possibilities. Shape, share, and enjoy your gaming journey with us – the ultimate destination for gamers, by gamers.
+**Client:** React, Apollo Client, GraphQL, Vite, MUI, Bootstrap  
+**Server:** Node.js, Express, Apollo Server v4, Mongoose, MongoDB Atlas
 
 ## Installation
 
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/your-username/your-project.git
-   cd your-project
+   git clone https://github.com/bkness/Video-Gaming-Hub.git
+   cd Video-Gaming-Hub
    ```
 
-2. Install dependencies:
+2. Install all dependencies (root, server, and client):
 
    ```sh
    npm install
    ```
 
-3. Build the project (from the root folder):
+3. Create `server/.env` with the following variables:
 
-   ```sh
-   npm run build
+   ```
+   MONGODB_URI=mongodb+srv://<user>:<pass>@cluster.mongodb.net/videogame_db?retryWrites=true&w=majority
+   RAWG_API_KEY=your_rawg_key
+   NEWS_API_KEY=your_news_api_key
+   JWT_SECRET=your_secret
    ```
 
-4. Start the development server from the client folder:
+4. Start the development server:
 
    ```sh
-   cd client
-   npm run develop
+   npm run dev
    ```
 
-5. Start the server from the root folder:
-
-   ```sh
-   cd ..
-   npm run start
-   ```
-
-### Additional Notes
-
-- Ensure you have the necessary environment variables set up in a `.env` file in the root directory. Refer to `.env.example` for required variables.
-- If you encounter any issues, check the project's documentation or open an issue on the repository.
+   This runs both the Express/Apollo server on port 3001 and the Vite client on port 3002.
 
 ## Usage
 
-- Open your browser and navigate to [http://localhost:3002](http://localhost:3002) to view the application.
-- Alternatively, visit our website at [Video Game Hub](https://video-gaming-hub.onrender.com/)
+- Visit [http://localhost:3002](http://localhost:3002) in your browser
+- Live demo: [https://video-gaming-hub.onrender.com](https://video-gaming-hub.onrender.com)
 
 ## Screenshots
 
@@ -81,6 +61,6 @@ Join us at Video Game Hub and unlock a world of limitless possibilities. Shape, 
 
 ## Credits
 
-- Brandon Kelly - https://github.com/bkness
-- Dylan Horyza - https://github.com/dylanhoryza
-- Spencer Henegar - https://github.com/HenegarCodes
+- Brandon Kelly — https://github.com/bkness
+- Dylan Horyza — https://github.com/dylanhoryza
+- Spencer Henegar — https://github.com/HenegarCodes
