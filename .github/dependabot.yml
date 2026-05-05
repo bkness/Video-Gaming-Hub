@@ -6,10 +6,12 @@
 version: 2
 updates:
   - package-ecosystem: "npm"
-    directory: "/" 
-    # Check the npm registry for updates every day (weekdays)
+    directory: "/"
     schedule:
       interval: "daily"
+    ignore:
+      - dependency-name: "@apollo/server"
+        update-types: ["version-update:semver-major"]
 
   # Enable version updates for the `root` directory
   - package-ecosystem: "docker"
