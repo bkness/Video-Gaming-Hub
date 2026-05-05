@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@apollo/server": "^4.11.0",
+    "@apollo/server": "^5.5.0",
     "axios": "^1.7.2",
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
